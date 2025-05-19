@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Partners | Crimson Hollow</title>
+  <script src="cyber-bg.js" defer></script>
+  <script src="snow.js" defer></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      background-color: #0a0a0a;
+      cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23ff3c3c" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><circle cx="12" cy="12" r="5" fill="%23ff3c3c"/></svg>') 12 12, auto;
+      border-left: 2px solid #ff3c3c;
+      border-right: 2px solid #ff3c3c;
+      overflow-x: hidden;
+    }
+
+    .full-width {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+    }
+
+    nav {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 15px 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      font-weight: bold;
+      font-size: 18px;
+      border-bottom: 2px solid #ff3c3c;
+      backdrop-filter: blur(5px);
+    }
+
+    nav a {
+      color: #ff3c3c;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      text-shadow: 0 0 5px #ff3c3c;
+    }
+
+    nav a:hover {
+      color: #fff;
+      text-shadow: 0 0 10px #ff3c3c;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .title {
+      text-align: center;
+      color: #ff3c3c;
+      font-size: 2.8em;
+      margin-bottom: 40px;
+      text-shadow: 0 0 10px #ff3c3c;
+      animation: glitch 500ms infinite;
+    }
+
+    .advertisement {
+      width: 100%;
+      max-height: 350px;
+      object-fit: cover;
+      border-bottom: 2px solid #ff3c3c;
+      margin-bottom: 40px;
+      border-radius: 8px;
+      box-shadow: 0 0 20px rgba(255, 60, 60, 0.5);
+    }
+
+    .partner-card {
+      background: rgba(42, 42, 42, 0.7);
+      border: 2px solid #ff3c3c;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 0 20px rgba(255, 60, 60, 0.5);
+      display: flex;
+      gap: 30px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      backdrop-filter: blur(5px);
+      margin-bottom: 40px;
+    }
+
+    .logo {
+      max-width: 200px;
+      border-radius: 8px;
+      border: 2px solid #ff3c3c;
+      box-shadow: 0 0 15px rgba(255, 60, 60, 0.7);
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .logo:hover {
+      transform: scale(1.05);
+    }
+
+    .description {
+      flex: 1;
+      min-width: 300px;
+      color: #fff;
+    }
+
+    .description h2 {
+      margin-top: 0;
+      color: #ff3c3c;
+      text-shadow: 0 0 5px #ff3c3c;
+      margin-bottom: 20px;
+    }
+
+    .description p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .description a {
+      color: #ff3c3c;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .description a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      background: rgba(0, 0, 0, 0.8);
+      border-top: 1px solid #ff3c3c;
+      color: #ff3c3c;
+      margin-top: 60px;
+      backdrop-filter: blur(5px);
+      text-shadow: 0 0 5px #ff3c3c;
+    }
+
+    @keyframes glitch {
+      0% { text-shadow: 0.05em 0 0 #ff3c3c, -0.05em -0.025em 0 #00f, -0.025em 0.05em 0 #0f0; }
+      14% { text-shadow: 0.05em 0 0 #ff3c3c, -0.05em -0.025em 0 #00f, -0.025em 0.05em 0 #0f0; }
+      15% { text-shadow: -0.05em -0.025em 0 #ff3c3c, 0.025em 0.025em 0 #00f, -0.05em -0.05em 0 #0f0; }
+      49% { text-shadow: -0.05em -0.025em 0 #ff3c3c, 0.025em 0.025em 0 #00f, -0.05em -0.05em 0 #0f0; }
+      50% { text-shadow: 0.025em 0.05em 0 #ff3c3c, 0.05em 0 0 #00f, 0 -0.05em 0 #0f0; }
+      99% { text-shadow: 0.025em 0.05em 0 #ff3c3c, 0.05em 0 0 #00f, 0 -0.05em 0 #0f0; }
+      100% { text-shadow: -0.025em 0 0 #ff3c3c, -0.025em -0.025em 0 #00f, -0.025em -0.05em 0 #0f0; }
+    }
+
+    .glitch-effect {
+      animation: glitch 500ms infinite;
+    }
+
+    .glitch-effect:hover {
+      animation: none;
+    }
+
+    @media screen and (max-width: 768px) {
+      nav {
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+      .partner-card {
+        flex-direction: column;
+        align-items: center;
+      }
+      .logo {
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="full-width">
+    <nav>
+      <a href="index.html" class="glitch-effect">Home</a>
+      <a href="contact.html" class="glitch-effect">Contact</a>
+      <a href="partners.html" class="glitch-effect">Wintergate</a>
+      <a href="services.html" class="glitch-effect">Services</a>
+    </nav>
+  </div>
+
+  <div class="container">
+    <img 
+      src="https://media.discordapp.net/attachments/1372717966801768632/1373226457912053760/Wintergate.23.png?ex=682b9e8c&is=682a4d0c&hm=31d157e826f219e124cba7641826bb1e6e8eda6115cecf2c195fc13b88b66ac0&=&format=webp&quality=lossless" 
+      alt="WinterGate Advertisement" 
+      class="advertisement"
+    />
+
+    <div class="title glitch-effect">WinterGate</div>
+
+    <div class="partner-card">
+      <img 
+        src="https://media.discordapp.net/attachments/1372717966801768632/1373888562956734495/j_1.png?ex=682c0cef&is=682abb6f&hm=7e99e466dbb3b591e9612bae46402a697080dfecb14da041b66512e43e3964eb&=&format=webp&quality=lossless" 
+        alt="WinterGate Logo" 
+        class="logo"
+      />
+
+      <div class="description">
+        <h2 class="glitch-effect">Our Elite Partner: WinterGate</h2>
+        <p>
+          WinterGate is a cutting-edge cyber defense coalition that stands as a pillar of ethical force within the digital landscape. 
+          Known for their military-grade threat analysis and forensics operations, WinterGate operates under a strict moral doctrine, combining precision intelligence 
+          with strategic countermeasures to defend vulnerable systems and expose malignant actors.
+        </p>
+        <p>
+          Their team is composed of deeply experienced analysts, white-hat hackers, cybercriminal profilers, and security engineers — each vetted for ethical integrity and operational discipline.
+          Their infrastructure is battle-tested across real-world intrusion scenarios, often assisting in real-time threat prevention, compromised network restorations, and blackhat takedowns.
+        </p>
+        <p>
+          WinterGate's alliance with Crimson Hollow enables a seamless exchange of tactical information and frontline reports during live threat events. 
+          Their role extends beyond digital operations: they help build fortified systems, educate organizations on secure practices, and deploy counter-ops when malicious agents overstep boundaries.
+        </p>
+        <p>
+          This partnership is founded on unwavering trust, precision cooperation, and a mutual goal — to preserve digital justice, protect data sovereignty, 
+          and serve the innocent across the world's most dangerous online fronts.
+        </p>
+        <p>
+          Website: <a href="https://wintergate.org" target="_blank">https://wintergate.org</a>
+        </p>
+        <p>
+          Discord Server: <a href="https://discord.gg/MfJ82jVQ2e" target="_blank">https://discord.gg/MfJ82jVQ2e</a>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="full-width">
+    <footer>
+      <p>Crimson Hollow ©2025</p>
+    </footer>
+  </div>
+</body>
+</html>

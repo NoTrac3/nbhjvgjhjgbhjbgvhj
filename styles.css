@@ -1,0 +1,31 @@
+body {
+  background-color: #111;
+  color: #ccc;
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0 20px;
+  cursor: url('red-cursor.png'), auto;
+}
+
+nav {
+  background: #222;
+  padding: 10px;
+  text-align: center;
+}
+
+nav a {
+  color: red;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+main {
+  padding: 20px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  color: darkred;
+}

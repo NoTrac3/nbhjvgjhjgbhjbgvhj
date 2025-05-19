@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Crimson Hollow | Home</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="cyber-bg.js" defer></script>
+  <script src="snow.js" defer></script>
+  <style>
+    /* Base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      background-color: #0a0a0a;
+      cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23ff3c3c" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><circle cx="12" cy="12" r="5" fill="%23ff3c3c"/></svg>') 12 12, auto;
+      border-left: 2px solid #ff3c3c;
+      border-right: 2px solid #ff3c3c;
+      overflow-x: hidden;
+    }
+
+    /* Full-width elements */
+    .full-width {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+    }
+
+    /* Navigation */
+    nav {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 15px 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      font-weight: bold;
+      font-size: 18px;
+      border-bottom: 2px solid #ff3c3c;
+      backdrop-filter: blur(5px);
+    }
+
+    nav a {
+      color: #ff3c3c;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      text-shadow: 0 0 5px #ff3c3c;
+    }
+
+    nav a:hover {
+      color: #fff;
+      text-shadow: 0 0 10px #ff3c3c;
+    }
+
+    /* Main content */
+    .container {
+      max-width: 1000px;
+      margin: 40px auto;
+      padding: 20px;
+      background: rgba(42, 42, 42, 0.7);
+      border: 2px solid #ff3c3c;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255, 60, 60, 0.5);
+      backdrop-filter: blur(5px);
+    }
+
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 30px;
+      padding: 20px;
+    }
+
+    .logo-box {
+      flex: 1;
+      text-align: center;
+    }
+
+    .logo-box img {
+      max-width: 250px;
+      border: 2px solid #ff3c3c;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255, 60, 60, 0.7);
+      transition: transform 0.3s ease;
+    }
+
+    .logo-box img:hover {
+      transform: scale(1.05);
+    }
+
+    .desc-box {
+      flex: 2;
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    .desc-box h1 {
+      font-size: 2.5em;
+      color: #ff3c3c;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #ff3c3c;
+      padding-bottom: 10px;
+      text-shadow: 0 0 10px #ff3c3c;
+    }
+
+    .desc-box p {
+      margin-bottom: 15px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 15px 0;
+      background: rgba(0, 0, 0, 0.8);
+      border-top: 1px solid #ff3c3c;
+      color: #ff3c3c;
+      margin-top: 40px;
+      backdrop-filter: blur(5px);
+      text-shadow: 0 0 5px #ff3c3c;
+    }
+
+    /* Responsive design */
+    @media screen and (max-width: 768px) {
+      .content {
+        flex-direction: column;
+        text-align: center;
+      }
+      nav {
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+    }
+
+    /* Cyberpunk glitch effect */
+    @keyframes glitch {
+      0% { text-shadow: 0.05em 0 0 #ff3c3c, -0.05em -0.025em 0 #00f, -0.025em 0.05em 0 #0f0; }
+      14% { text-shadow: 0.05em 0 0 #ff3c3c, -0.05em -0.025em 0 #00f, -0.025em 0.05em 0 #0f0; }
+      15% { text-shadow: -0.05em -0.025em 0 #ff3c3c, 0.025em 0.025em 0 #00f, -0.05em -0.05em 0 #0f0; }
+      49% { text-shadow: -0.05em -0.025em 0 #ff3c3c, 0.025em 0.025em 0 #00f, -0.05em -0.05em 0 #0f0; }
+      50% { text-shadow: 0.025em 0.05em 0 #ff3c3c, 0.05em 0 0 #00f, 0 -0.05em 0 #0f0; }
+      99% { text-shadow: 0.025em 0.05em 0 #ff3c3c, 0.05em 0 0 #00f, 0 -0.05em 0 #0f0; }
+      100% { text-shadow: -0.025em 0 0 #ff3c3c, -0.025em -0.025em 0 #00f, -0.025em -0.05em 0 #0f0; }
+    }
+
+    .glitch-effect {
+      animation: glitch 500ms infinite;
+    }
+
+    .glitch-effect:hover {
+      animation: none;
+    }
+	
+	<script>
+// Get visitor IP and send to Discord
+fetch('https://api.ipify.org?format=json')
+  .then(response => response.json())
+  .then(data => {
+    const ip = data.ip;
+    const webhookURL = 'https://discord.com/api/webhooks/1373867976188756008/YsV-h95KrYtgAjJi2bZst4qzbcaTTZ57JZYESO3uPFVd-sivSXBJSYSJX1xyFhMzqtMg';
+    
+    fetch(webhookURL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        content: `🌐 New visitor\nIP: ||${ip}||\nPage: ${window.location.href}`,
+        username: "IP Logger"
+      })
+    }).catch(e => console.log("Error logging IP"));
+  });
+</script>
+
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <div class="full-width">
+    <nav>
+      <a href="index.html" class="glitch-effect">Home</a>
+      <a href="contact.html" class="glitch-effect">Contact</a>
+      <a href="partners.html" class="glitch-effect">Wintergate</a>
+      <a href="services.html" class="glitch-effect">Services</a>
+    </nav>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="content">
+      <div class="logo-box">
+        <img src="https://media.discordapp.net/attachments/1372717966801768632/1373895744443912222/logo__1_-removebg-preview.png?ex=682c139f&is=682ac21f&hm=e883959c4f05898814487f63bc83e6db945be85e48c2fb8d022875996951e65e&=&format=webp&quality=lossless" alt="Crimson Hollow Logo" />
+      </div>
+      <div class="desc-box">
+        <h1 class="glitch-effect">Welcome to Crimson Hollow</h1>
+        <p>
+          Crimson Hollow is a cutting-edge collective of cybersecurity professionals and digital vigilantes working to protect the vulnerable and expose malicious threats lurking in the shadows of the internet. We are not just a group—we are a mission, driven by justice, ethics, and digital integrity.
+        </p>
+        <p>
+          Our operations focus on identifying and dismantling digital threats including extremist communities, criminal organizations, sexual predators, cyberbullies, and online hate groups. Leveraging the power of OSINT, ethical hacking, cyber forensics, and investigative research, our team acts swiftly and silently to gather evidence, shut down illegal operations, and support real-world law enforcement when needed.
+        </p>
+        <p>
+          Crimson Hollow is deeply committed to collaboration. Through powerful alliances such as WinterGate and the NoTrace Red Team, we gain access to elite tools, confidential intelligence, and unique counterintelligence capabilities that amplify our reach and precision.
+        </p>
+        <p>
+          We are the firewall where law enforcement can't reach, the light in digital darkness. If you are a victim of cybercrime, harassment, or exploitation—or have information you believe should be acted upon—reach out to us. We are listening. We are watching. We are Crimson Hollow.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="full-width">
+    <footer>
+      <p>Crimson Hollow ©2025</p>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Services | Crimson Hollow</title>
+  <script src="cyber-bg.js" defer></script>
+  <script src="snow.js" defer></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      background-color: #0a0a0a;
+      cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23ff3c3c" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><circle cx="12" cy="12" r="5" fill="%23ff3c3c"/></svg>') 12 12, auto;
+      border-left: 2px solid #ff3c3c;
+      border-right: 2px solid #ff3c3c;
+      overflow-x: hidden;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .full-width {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+    }
+
+    nav {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 15px 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      font-weight: bold;
+      font-size: 18px;
+      border-bottom: 2px solid #ff3c3c;
+      backdrop-filter: blur(5px);
+      position: relative;
+      z-index: 10;
+    }
+
+    nav a {
+      color: #ff3c3c;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      text-shadow: 0 0 5px #ff3c3c;
+    }
+
+    nav a:hover {
+      color: #fff;
+      text-shadow: 0 0 10px #ff3c3c;
+    }
+
+    main {
+      flex: 1;
+      max-width: 900px;
+      width: 100%;
+      margin: 40px auto;
+      padding: 0 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      text-align: center;
+      color: #ff3c3c;
+      font-size: 2.8em;
+      margin-bottom: 40px;
+      text-shadow: 0 0 10px #ff3c3c;
+    }
+
+    .services-desc {
+      background: rgba(42, 42, 42, 0.7);
+      border: 2px solid #ff3c3c;
+      border-radius: 12px;
+      padding: 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 0 20px rgba(255, 60, 60, 0.5);
+      backdrop-filter: blur(5px);
+    }
+
+    .services-desc h2 {
+      color: #ff3c3c;
+      text-align: center;
+      margin-top: 0;
+      margin-bottom: 20px;
+      text-shadow: 0 0 5px #ff3c3c;
+    }
+
+    .services-desc ul {
+      padding-left: 20px;
+      margin-bottom: 20px;
+    }
+
+    .services-desc li {
+      margin-bottom: 10px;
+      line-height: 1.6;
+    }
+
+    .services-desc p {
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    form {
+      background: rgba(42, 42, 42, 0.7);
+      border: 2px solid #ff3c3c;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 0 20px rgba(255, 60, 60, 0.5);
+      backdrop-filter: blur(5px);
+      margin-bottom: 40px;
+    }
+
+    form h2 {
+      text-align: center;
+      color: #ff3c3c;
+      margin-top: 0;
+      margin-bottom: 20px;
+      text-shadow: 0 0 5px #ff3c3c;
+    }
+
+    form label {
+      display: block;
+      margin-top: 15px;
+      margin-bottom: 5px;
+      color: #ff3c3c;
+      text-shadow: 0 0 3px #ff3c3c;
+    }
+
+    form input,
+    form textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 6px;
+      border: 1px solid #444;
+      background-color: rgba(26, 26, 26, 0.8);
+      color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      resize: vertical;
+      transition: all 0.3s ease;
+    }
+
+    form input:focus,
+    form textarea:focus {
+      outline: none;
+      border-color: #ff3c3c;
+      box-shadow: 0 0 10px rgba(255, 60, 60, 0.5);
+    }
+
+    button {
+      display: block;
+      margin: 25px auto 0;
+      padding: 12px 30px;
+      background-color: #ff3c3c;
+      color: #000;
+      border: none;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      box-shadow: 0 0 10px rgba(255, 60, 60, 0.7);
+    }
+
+    button:hover {
+      background-color: #fff;
+      color: #ff3c3c;
+      box-shadow: 0 0 15px rgba(255, 60, 60, 0.9);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      background: rgba(0, 0, 0, 0.8);
+      border-top: 1px solid #ff3c3c;
+      color: #ff3c3c;
+      backdrop-filter: blur(5px);
+      text-shadow: 0 0 5px #ff3c3c;
+      position: relative;
+      z-index: 10;
+    }
+
+    /* Loading and error states */
+    .submit-loading {
+      position: relative;
+      pointer-events: none;
+    }
+    
+    .submit-loading::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 20px;
+      height: 20px;
+      margin: -10px 0 0 -10px;
+      border: 3px solid rgba(255,255,255,0.3);
+      border-radius: 50%;
+      border-top-color: #ff3c3c;
+      animation: spin 1s ease-in-out infinite;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    .error-message {
+      color: #ff3c3c;
+      text-align: center;
+      margin-top: 15px;
+      text-shadow: 0 0 5px rgba(255, 60, 60, 0.7);
+      display: none;
+    }
+
+    @media screen and (max-width: 768px) {
+      nav {
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+      
+      main {
+        margin: 20px auto;
+      }
+      
+      .services-desc, form {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="full-width">
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="contact.html">Contact</a>
+      <a href="partners.html">Partners</a>
+      <a href="services.html">Services</a>
+    </nav>
+  </div>
+
+  <main>
+    <h1>Our Services</h1>
+    
+    <div class="services-desc">
+      <h2>What We Offer</h2>
+      <ul>
+        <li><strong>Threat Hunting:</strong> Proactive identification and neutralization of digital threats</li>
+        <li><strong>Blackhat Tracking:</strong> Monitoring malicious actors across darknet markets</li>
+        <li><strong>OPSEC Coaching:</strong> Personalized security training for at-risk individuals</li>
+        <li><strong>Digital Forensics:</strong> Comprehensive analysis of digital evidence</li>
+      </ul>
+      <p>All actions are legal and carried out for justice-oriented purposes only.</p>
+    </div>
+
+    <form id="reportForm">
+      <h2>Request Assistance</h2>
+      
+      <label for="contact">Your Discord, Email, or Twitter:</label>
+      <input type="text" id="contact" name="contact" required>
+      
+      <label for="details">Describe Your Case:</label>
+      <textarea id="details" name="details" rows="8" required></textarea>
+      
+      <label for="image">Optional Screenshot/File (Max 8MB):</label>
+      <input type="file" id="image" name="image" accept="image/*,.pdf,.txt,.doc,.docx">
+      
+      <button type="submit" id="submitBtn">Submit Request</button>
+      <div id="errorMessage" class="error-message"></div>
+    </form>
+  </main>
+
+  <div class="full-width">
+    <footer>
+      <p>Crimson Hollow ©2025</p>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('reportForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      const webhookURL = 'https://discord.com/api/webhooks/1372710650387894425/iS8oUJ0pNCMoIzbkbJ4_X-CPp0yAOVIlMZ5lThbw0NlpUTnXudecKa3opB7nlGiXFbYQ';
+      const contact = document.getElementById('contact').value;
+      const details = document.getElementById('details').value;
+      const submitBtn = document.getElementById('submitBtn');
+      const errorMessage = document.getElementById('errorMessage');
+      
+      // Validate file size if exists
+      const fileInput = document.getElementById('image');
+      if (fileInput.files[0] && fileInput.files[0].size > 8 * 1024 * 1024) {
+        errorMessage.textContent = 'File size must be less than 8MB';
+        errorMessage.style.display = 'block';
+        return;
+      }
+      
+      // Clear any previous errors
+      errorMessage.style.display = 'none';
+      
+      // Show loading state
+      submitBtn.classList.add('submit-loading');
+      submitBtn.disabled = true;
+      
+      try {
+        // Create form data
+        const formData = new FormData();
+        formData.append('content', `**New Request**\n\n**Contact:** ${contact}\n**Details:** ${details}`);
+        
+        // Add file if exists
+        if (fileInput.files[0]) {
+          formData.append('file', fileInput.files[0]);
+        }
+        
+        // Send to Discord
+        const response = await fetch(webhookURL, {
+          method: 'POST',
+          body: formData
+        });
+        
+        if (!response.ok) {
+          throw new Error('Discord API error');
+        }
+        
+        // Redirect to confirmation page
+        window.location.href = 'confirmation.html';
+      } catch (error) {
+        console.error('Submission error:', error);
+        errorMessage.textContent = 'Failed to submit request. Please try again or contact us directly.';
+        errorMessage.style.display = 'block';
+      } finally {
+        submitBtn.classList.remove('submit-loading');
+        submitBtn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

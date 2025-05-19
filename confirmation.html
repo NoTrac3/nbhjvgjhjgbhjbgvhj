@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Request Submitted | Crimson Hollow</title>
+  <script src="cyber-bg.js" defer></script>
+  <script src="snow.js" defer></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      background-color: #0a0a0a;
+      cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23ff3c3c" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><circle cx="12" cy="12" r="5" fill="%23ff3c3c"/></svg>') 12 12, auto;
+      border-left: 2px solid #ff3c3c;
+      border-right: 2px solid #ff3c3c;
+      overflow-x: hidden;
+    }
+
+    .full-width {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+    }
+
+    nav {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 15px 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      font-weight: bold;
+      font-size: 18px;
+      border-bottom: 2px solid #ff3c3c;
+      backdrop-filter: blur(5px);
+    }
+
+    nav a {
+      color: #ff3c3c;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      text-shadow: 0 0 5px #ff3c3c;
+    }
+
+    .confirmation-container {
+      max-width: 800px;
+      margin: 100px auto;
+      padding: 40px;
+      text-align: center;
+      background: rgba(42, 42, 42, 0.7);
+      border: 2px solid #ff3c3c;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 60, 60, 0.5);
+      backdrop-filter: blur(5px);
+    }
+
+    .confirmation-container h1 {
+      color: #ff3c3c;
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px #ff3c3c;
+    }
+
+    .confirmation-container p {
+      font-size: 1.2em;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    .home-button {
+      display: inline-block;
+      padding: 12px 30px;
+      background-color: #ff3c3c;
+      color: #000;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 10px rgba(255, 60, 60, 0.7);
+    }
+
+    .home-button:hover {
+      background-color: #fff;
+      color: #ff3c3c;
+      box-shadow: 0 0 15px rgba(255, 60, 60, 0.9);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      background: rgba(0, 0, 0, 0.8);
+      border-top: 1px solid #ff3c3c;
+      color: #ff3c3c;
+      margin-top: 60px;
+      backdrop-filter: blur(5px);
+      text-shadow: 0 0 5px #ff3c3c;
+    }
+
+    @media screen and (max-width: 768px) {
+      .confirmation-container {
+        margin: 50px 20px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="full-width">
+    <nav>
+      <a href="index.html" class="glitch-effect">Home</a>
+      <a href="contact.html" class="glitch-effect">Contact</a>
+      <a href="partners.html" class="glitch-effect">Partners</a>
+      <a href="services.html" class="glitch-effect">Services</a>
+    </nav>
+  </div>
+
+  <div class="confirmation-container">
+    <h1>Request Submitted</h1>
+    <p>Your request is being reviewed by our team.</p>
+    <p>We will contact you shortly through the provided contact method.</p>
+    <a href="index.html" class="home-button">Return to Homepage</a>
+  </div>
+
+  <div class="full-width">
+    <footer>
+      <p>Crimson Hollow ©2025</p>
+    </footer>
+  </div>
+</body>
+</html>

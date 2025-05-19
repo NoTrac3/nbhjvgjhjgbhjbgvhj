@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Contact | Crimson Hollow</title>
+  <script src="cyber-bg.js" defer></script>
+  <script src="snow.js" defer></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      background-color: #0a0a0a;
+      cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="%23ff3c3c" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/><circle cx="12" cy="12" r="5" fill="%23ff3c3c"/></svg>') 12 12, auto;
+      border-left: 2px solid #ff3c3c;
+      border-right: 2px solid #ff3c3c;
+      overflow-x: hidden;
+    }
+
+    .full-width {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      right: 50%;
+      margin-left: -50vw;
+      margin-right: -50vw;
+    }
+
+    nav {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 15px 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      font-weight: bold;
+      font-size: 18px;
+      border-bottom: 2px solid #ff3c3c;
+      backdrop-filter: blur(5px);
+    }
+
+    nav a {
+      color: #ff3c3c;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      text-shadow: 0 0 5px #ff3c3c;
+    }
+
+    nav a:hover {
+      color: #fff;
+      text-shadow: 0 0 10px #ff3c3c;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #ff3c3c;
+      margin: 40px 0 30px;
+      font-size: 2.8em;
+      text-shadow: 0 0 10px #ff3c3c;
+      animation: glitch 500ms infinite;
+    }
+
+    .profile {
+      display: flex;
+      gap: 30px;
+      align-items: flex-start;
+      margin-bottom: 60px;
+      flex-wrap: wrap;
+    }
+
+    .angel-logo {
+      max-width: 200px;
+      border: 2px solid #ff3c3c;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(255, 60, 60, 0.7);
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+    }
+
+    .angel-logo:hover {
+      transform: scale(1.05);
+    }
+
+    .profile-text {
+      flex: 1;
+      min-width: 300px;
+      font-size: 1.1em;
+      line-height: 1.6;
+      border: 2px solid #ff3c3c;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 60, 60, 0.5);
+      background: rgba(42, 42, 42, 0.7);
+      backdrop-filter: blur(5px);
+    }
+
+    .profile-text h2 {
+      color: #ff3c3c;
+      margin-top: 0;
+      margin-bottom: 15px;
+      text-shadow: 0 0 5px #ff3c3c;
+    }
+
+    .socials {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 25px;
+      background: rgba(42, 42, 42, 0.7);
+      border: 2px solid #ff3c3c;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 60, 60, 0.5);
+      backdrop-filter: blur(5px);
+    }
+
+    .socials h3 {
+      text-align: center;
+      color: #ff3c3c;
+      margin-bottom: 20px;
+      text-shadow: 0 0 5px #ff3c3c;
+    }
+
+    .socials ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .socials li {
+      margin-bottom: 10px;
+      padding: 10px;
+      background: rgba(26, 26, 26, 0.5);
+      border-radius: 6px;
+    }
+
+    .socials strong {
+      color: #ff3c3c;
+    }
+
+    .monero {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: rgba(26, 26, 26, 0.7);
+      border: 2px solid #ff3c3c;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 60, 60, 0.5);
+      font-family: monospace;
+      color: #ff3c3c;
+      text-align: center;
+      word-break: break-all;
+      backdrop-filter: blur(5px);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      background: rgba(0, 0, 0, 0.8);
+      border-top: 1px solid #ff3c3c;
+      color: #ff3c3c;
+      margin-top: 60px;
+      backdrop-filter: blur(5px);
+      text-shadow: 0 0 5px #ff3c3c;
+    }
+
+    @keyframes glitch {
+      0% { text-shadow: 0.05em 0 0 #ff3c3c, -0.05em -0.025em 0 #00f, -0.025em 0.05em 0 #0f0; }
+      14% { text-shadow: 0.05em 0 0 #ff3c3c, -0.05em -0.025em 0 #00f, -0.025em 0.05em 0 #0f0; }
+      15% { text-shadow: -0.05em -0.025em 0 #ff3c3c, 0.025em 0.025em 0 #00f, -0.05em -0.05em 0 #0f0; }
+      49% { text-shadow: -0.05em -0.025em 0 #ff3c3c, 0.025em 0.025em 0 #00f, -0.05em -0.05em 0 #0f0; }
+      50% { text-shadow: 0.025em 0.05em 0 #ff3c3c, 0.05em 0 0 #00f, 0 -0.05em 0 #0f0; }
+      99% { text-shadow: 0.025em 0.05em 0 #ff3c3c, 0.05em 0 0 #00f, 0 -0.05em 0 #0f0; }
+      100% { text-shadow: -0.025em 0 0 #ff3c3c, -0.025em -0.025em 0 #00f, -0.025em -0.05em 0 #0f0; }
+    }
+
+    .glitch-effect {
+      animation: glitch 500ms infinite;
+    }
+
+    .glitch-effect:hover {
+      animation: none;
+    }
+
+    @media screen and (max-width: 768px) {
+      nav {
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+      .profile {
+        flex-direction: column;
+        align-items: center;
+      }
+      .angel-logo {
+        margin-bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="full-width">
+    <nav>
+      <a href="index.html" class="glitch-effect">Home</a>
+      <a href="contact.html" class="glitch-effect">Contact</a>
+      <a href="partners.html" class="glitch-effect">Wintergate</a>
+      <a href="services.html" class="glitch-effect">Services</a>
+    </nav>
+  </div>
+
+  <main>
+    <h1 class="glitch-effect">Contact Us</h1>
+    
+    <div class="profile">
+      <img
+        src="https://media.discordapp.net/attachments/1372717966801768632/1373897183639769170/pfp__2_-removebg-preview.png?ex=682c14f6&is=682ac376&hm=e65c9c841e36e8cfd5fd2960a26f22ab4b215c73d7c7279b405054157d69ed77&=&format=webp&quality=lossless"
+        alt="Δπɢεl Logo"
+        class="angel-logo"
+      />
+      <div class="profile-text">
+        <h2 class="glitch-effect">Δπɢεl</h2>
+          Δπɢεl is the founder and lead investigator of Crimson Hollow. With extensive experience in OSINT, ethical hacking, and threat intelligence, she has dedicated years to uncovering and dismantling online predator networks, extremist groups, and cybercriminal organizations.
+        <p>
+          Her expertise spans coordinated cyber investigations, penetration testing, digital forensics, and real-time threat intelligence sharing with allied security organizations. Beyond technical prowess, Δπɢεl is committed to providing a voice and protection for victims of online abuse.
+        </p>
+          Whether tracking down cyberstalkers, infiltrating malicious networks, or guiding victims through the labyrinth of cybercrime, Δπɢεl's unwavering dedication forms the backbone of Crimson Hollow's mission to restore safety and justice in the digital realm.
+        </p>
+      </div>
+    </div>
+
+    <div class="socials">
+      <h3 class="glitch-effect">Connect with Δπɢεl:</h3>
+      <ul>
+        <li>Discord: <strong>fvckth3w0r1d969</strong></li>
+        <li>Twitter: <strong>@deathbed365590</strong></li>
+      </ul>
+    </div>
+
+    <div class="monero">
+      <h3 class="glitch-effect">Support Our Work</h3>
+      <p>Donating helps us maintain our tools, training, and research operations.</p>
+      <p>We accept Monero for privacy:</p>
+      <p>43U8y1xCw53UoRbbaZDVRCTPu2WeMgyU259Y1WDCa8HYHrDKkXhSCSq9WMsjRnjpJ4eTn5DBiX9TU4qHbiQuayGhT3RQRTP4</p>
+    </div>
+  </main>
+
+  <div class="full-width">
+    <footer>
+      <p>Crimson Hollow ©2025</p>
+    </footer>
+  </div>
+</body>
+</html>
